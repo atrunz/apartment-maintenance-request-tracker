@@ -132,10 +132,10 @@ public class MaintenanceOffice {
         }
 
         System.out.println("\n--- DAILY REPORT ---");
-        System.out.println("Total requests (all time): " + total);
-        System.out.println("Open (active): " + open);
+        System.out.println("All time Requests): " + total);
+        System.out.println("Active: " + open);
         System.out.println("Closed: " + closed);
-        System.out.println("Severity counts:");
+        System.out.println("Severity frequency:");
         System.out.println("  Low (1-2): " + low);
         System.out.println("  Medium (3): " + medium);
         System.out.println("  High (4-5): " + high);
