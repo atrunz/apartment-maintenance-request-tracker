@@ -65,7 +65,6 @@ public class MaintenanceRequest {
 
     @Override
     public String toString() {
-        if()
         return getTenantName() + " " + getApartmentNumber() + " " + getIssueType() + " " + getSeverity() + " " + getStatus();
     }
 }

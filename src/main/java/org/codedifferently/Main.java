@@ -26,6 +26,18 @@ public class Main {
             }
         }
 
+        MaintenanceOffice office = new MaintenanceOffice();
+
+        System.out.println("Assigned tech for r1: " + office.assignTech(request1));
+        System.out.println("Assigned tech for r2: " + office.assignTech(request2));
+
+        office.updateStatus(request1, "IN_PROGRESS");
+        office.updateStatus(request2, "DONE");
+
+        // Won't close unless DONE:
+        office.closeRequest(request1); // prints warning
+        office.closeRequest(request2); // closes
+
 
         Scanner scanner = new Scanner(System.in);
 
@@ -66,6 +78,13 @@ public class Main {
                     severity = Integer.parseInt(severityInput);
 
                     if (severity >= 1 && severity <= 5) {
+
+                        if(severity == 5){
+                            System.out.println("DISPATCH");
+                        }
+                        else if (severity >= 4 && issue.equals("Electrical")){
+                            System.out.println("Warning");
+                        }
                         break;
                     } else {
                         System.out.println("Severity must be between 1 and 5.");
