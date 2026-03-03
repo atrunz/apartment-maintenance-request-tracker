@@ -2,10 +2,7 @@ package org.codedifferently;
 
 public class MaintenanceOffice {
 
-    /**
-     * Assign a technician name based on severity.
-     * You can change the names / logic as needed.
-     */
+
     public String assignTech(MaintenanceRequest request) {
         int s = request.getSeverity();
 
@@ -15,10 +12,7 @@ public class MaintenanceOffice {
         return "Tech D (Low)";
     }
 
-    /**
-     * Updates the request status ONLY if it's one of:
-     * NEW, IN_PROGRESS, DONE
-     */
+
     public boolean updateStatus(MaintenanceRequest request, String newStatus) {
         if (newStatus == null) return false;
 
@@ -33,9 +27,7 @@ public class MaintenanceOffice {
         return true;
     }
 
-    /**
-     * Closes a request only if status is DONE.
-     */
+
     public boolean closeRequest(MaintenanceRequest request) {
         if (request == null) return false;
 
@@ -44,8 +36,7 @@ public class MaintenanceOffice {
             return false;
         }
 
-        // If your model treats DONE as "closed", then closing is essentially confirming it.
-        // If you want a separate CLOSED status, you *can't* add it because rules forbid it.
+
         System.out.println("Request closed: " + request.getTenantName()
                 + " (Apt " + request.getApartmentNumber() + ")");
         return true;

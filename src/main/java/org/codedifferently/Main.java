@@ -34,9 +34,8 @@ public class Main {
         office.updateStatus(request1, "IN_PROGRESS");
         office.updateStatus(request2, "DONE");
 
-        // Won't close unless DONE:
-        office.closeRequest(request1); // prints warning
-        office.closeRequest(request2); // closes
+        office.closeRequest(request1);
+        office.closeRequest(request2);
 
 
         Scanner scanner = new Scanner(System.in);
@@ -71,7 +70,7 @@ public class Main {
                 String severityInput = scanner.nextLine();
 
                 if (severityInput.equalsIgnoreCase("done")) {
-                    return; // exits entire method
+                    return;
                 }
 
                 try {
